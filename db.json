@@ -1,0 +1,54 @@
+{
+    "obraSocial": [
+      {
+        "id": 1,
+        "title": "IAPOS"
+      },
+      {
+        "id": 2,
+        "title": "IOSER"
+      },
+      {
+        "id": 3,
+        "title": "OSPA VIAL"
+      },
+      {
+        "id": 4,
+        "title": "JERARQUICOS"
+      }
+    ],
+    "practica": [
+        {
+            "id": 1,
+            "nombre": "Glucosa",
+            "unidad":  "g/l",
+            "normalMujer": "",
+            "normalHombre": "",
+            "normalMenores": "" 
+        },
+        {
+            "id": 2,
+            "nombre": "Colesterol",
+            "unidad":  "mg/l",
+            "normalMujer": "",
+            "normalHombre": "",
+            "normalMenores": "" 
+        },
+        {
+            "id": 3,
+            "nombre": "Uricemia",
+            "unidad":  "g/l",
+            "normalMujer": "",
+            "normalHombre": "",
+            "normalMenores": "" 
+        },
+        {
+            "id": 4,
+            "nombre": "TSH",
+            "unidad":  "g/l",
+            "normalMujer": "",
+            "normalHombre": "",
+            "normalMenores": "" 
+        }
+    ]
+  }
