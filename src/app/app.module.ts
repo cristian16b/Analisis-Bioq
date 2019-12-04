@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { Routes , RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
@@ -13,6 +13,21 @@ import { MatListModule } from '@angular/material/list';
 import { ObraSocialComponent } from './obra-social/obra-social.component';
 import { PacienteComponent } from './paciente/paciente.component';
 import { LaboratorioComponent } from './laboratorio/laboratorio.component';
+
+const routes: Routes = [
+  {
+    path:'obraSocial',
+    component:ObraSocialComponent
+  },
+  {
+    path:'paciente',
+    component:PacienteComponent
+  },
+  {
+    path:'laboratorio',
+    component:LaboratorioComponent
+  }  
+];
 
 @NgModule({
   declarations: [
@@ -30,7 +45,8 @@ import { LaboratorioComponent } from './laboratorio/laboratorio.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
