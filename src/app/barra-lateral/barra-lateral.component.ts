@@ -19,3 +19,5 @@ export class BarraLateralComponent {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
 }
+//https://medium.com/@yonem9/angular-c%C3%B3mo-narices-se-gestiona-el-ciclo-de-vida-de-un-componente-881021590c01
+//https://medium.com/@yonem9/angular-c%C3%B3mo-narices-se-anidan-componentes-3f4a7124d751s
