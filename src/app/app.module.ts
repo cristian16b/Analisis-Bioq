@@ -13,6 +13,8 @@ import { MatListModule } from '@angular/material/list';
 import { ObraSocialComponent } from './obra-social/obra-social.component';
 import { PacienteComponent } from './paciente/paciente.component';
 import { LaboratorioComponent } from './laboratorio/laboratorio.component';
+import { ListadoObrasSocialesComponent } from './listado-obras-sociales/listado-obras-sociales.component';
+import { FilaObraSocialComponent } from './fila-obra-social/fila-obra-social.component';
 
 const routes: Routes = [
   {
@@ -35,7 +37,9 @@ const routes: Routes = [
     BarraLateralComponent,
     ObraSocialComponent,
     PacienteComponent,
-    LaboratorioComponent
+    LaboratorioComponent,
+    ListadoObrasSocialesComponent,
+    FilaObraSocialComponent
   ],
   imports: [
     BrowserModule,
