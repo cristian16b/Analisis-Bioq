@@ -15,6 +15,7 @@ import { PacienteComponent } from './paciente/paciente.component';
 import { LaboratorioComponent } from './laboratorio/laboratorio.component';
 import { ListadoObrasSocialesComponent } from './listado-obras-sociales/listado-obras-sociales.component';
 import { FilaObraSocialComponent } from './fila-obra-social/fila-obra-social.component';
+import { CrearObraSocialComponent } from './crear-obra-social/crear-obra-social.component';
 
 const routes: Routes = [
   {
@@ -39,7 +40,8 @@ const routes: Routes = [
     PacienteComponent,
     LaboratorioComponent,
     ListadoObrasSocialesComponent,
-    FilaObraSocialComponent
+    FilaObraSocialComponent,
+    CrearObraSocialComponent
   ],
   imports: [
     BrowserModule,
