@@ -16,6 +16,8 @@ import { LaboratorioComponent } from './laboratorio/laboratorio.component';
 import { ListadoObrasSocialesComponent } from './listado-obras-sociales/listado-obras-sociales.component';
 import { FilaObraSocialComponent } from './fila-obra-social/fila-obra-social.component';
 import { CrearObraSocialComponent } from './crear-obra-social/crear-obra-social.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
 
 const routes: Routes = [
   {
@@ -52,6 +54,8 @@ const routes: Routes = [
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatGridListModule,
+    MatTableModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
