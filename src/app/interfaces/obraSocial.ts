@@ -1,4 +1,4 @@
 export interface obraSocialI{
     id:number;
-    nombre:string;
+    title:string;
 }
