@@ -18,6 +18,7 @@ import { FilaObraSocialComponent } from './fila-obra-social/fila-obra-social.com
 import { CrearObraSocialComponent } from './crear-obra-social/crear-obra-social.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
+import { ApiRestService } from './servicios/api-rest.service'
 
 const routes: Routes = [
   {
@@ -58,7 +59,7 @@ const routes: Routes = [
     MatTableModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ApiRestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

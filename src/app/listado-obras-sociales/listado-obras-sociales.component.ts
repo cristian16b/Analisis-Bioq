@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { obraSocialI } from 'src/app/interfaces/obraSocial';
+import { ApiRestService } from 'src/app/servicios/api-rest.service';
 
 export interface PeriodicElement {
   name: string;
@@ -30,9 +33,16 @@ export class ListadoObrasSocialesComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  private listaObraSociales:Observable<obraSocialI[]>;
+
+  //mover a un archivo de configuracion
+  private url: string = 'https://my-json-server.typicode.com/cristian16b/Analisis-Bioq/obraSocial';
+
+  constructor(private apiObraSociales:ApiRestService) { 
+  }
 
   ngOnInit() {
+    this.listaObraSociales = this.apiObraSociales.getObraSocial(this.url);
   }
 
 }
