@@ -18,7 +18,8 @@ import { FilaObraSocialComponent } from './fila-obra-social/fila-obra-social.com
 import { CrearObraSocialComponent } from './crear-obra-social/crear-obra-social.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
-import { ApiRestService } from './servicios/api-rest.service'
+import { ApiRestService } from './servicios/api-rest.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -57,6 +58,7 @@ const routes: Routes = [
     MatListModule,
     MatGridListModule,
     MatTableModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ApiRestService],
