@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild } from '@angular/core';
 import { ApiRestService } from 'src/app/servicios/api-rest.service';
+import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-listado-obras-sociales',
@@ -10,7 +11,10 @@ export class ListadoObrasSocialesComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name'];
 
-  private listaObraSociales = [];
+  private listaObraSociales = new MatTableDataSource([]);
+
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   //mover a un archivo de configuracion
   private url: string = 'https://my-json-server.typicode.com/cristian16b/Analisis-Bioq/obraSocial';
@@ -21,6 +25,8 @@ export class ListadoObrasSocialesComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerObrasSociales();
+    // activo la paginacion
+
   }
 
   // para referencia de como cargar una tabla con un servicio y observables
@@ -30,7 +36,9 @@ export class ListadoObrasSocialesComponent implements OnInit {
     this.apiObraSociales.getObraSocial(this.url)
       .subscribe(
         listaObraSociales => {
-          this.listaObraSociales = listaObraSociales;
+          this.listaObraSociales = new MatTableDataSource(listaObraSociales);
+          this.listaObraSociales.paginator = this.paginator;
+          this.listaObraSociales.sort = this.sort;
           console.log(this.listaObraSociales);
         }
       )

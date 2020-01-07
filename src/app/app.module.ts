@@ -20,6 +20,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
 import { ApiRestService } from './servicios/api-rest.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material';
 
 const routes: Routes = [
   {
@@ -59,6 +60,7 @@ const routes: Routes = [
     MatGridListModule,
     MatTableModule,
     HttpClientModule,
+    MatPaginatorModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ApiRestService],
