@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+  }
+
+.custom_id {
+    font-style: italic;
+}
+
+.custom_name {
+    text-align: center;
+    font-style: oblique;
+}
+
+.custom_name_th{
+    text-align: center;
+}
