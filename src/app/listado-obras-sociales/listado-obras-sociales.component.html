@@ -3,7 +3,7 @@
     <!-- Position Column -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-      <td mat-cell [ngClass]="'custom_id'" fxFlex="5" *matCellDef="let element"> {{element.id}} </td>
+      <td mat-cell [ngClass]="'custom_id'" fxFlex="5" *matCellDef="let element"> {{element.id}} </td> 
     </ng-container>
       
     <!-- nota para los atributos de ngClass la propiedad debe ir " " y dentro de estas las '' pq sino no funcionan  -->
@@ -11,7 +11,7 @@
     <ng-container matColumnDef="name">
       
       <th mat-header-cell [ngClass]="'custom_name_th'" *matHeaderCellDef mat-sort-header> Nombre </th>
-      <td mat-cell [ngClass]="'custom_name'" fxFlex *matCellDef="let element"> {{element.title}} </td>
+       <td mat-cell [ngClass]="'custom_name'" fxFlex *matCellDef="let element"> {{element.title}} </td> 
     </ng-container>
           
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

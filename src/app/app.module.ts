@@ -21,6 +21,7 @@ import {MatTableModule} from '@angular/material/table';
 import { ApiRestService } from './servicios/api-rest.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
@@ -61,7 +62,8 @@ const routes: Routes = [
     MatTableModule,
     HttpClientModule,
     MatPaginatorModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FlexLayoutModule
   ],
   providers: [ApiRestService],
   bootstrap: [AppComponent]
