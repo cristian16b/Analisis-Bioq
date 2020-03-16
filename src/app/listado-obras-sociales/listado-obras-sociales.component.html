@@ -1,23 +1,24 @@
-<div class="mat-elevation-z8">
+<div [ngClass]="'centradoDiv'" class="mat-elevation-z8">
+  <h3>Listado de obras sociales afiliadas</h3>
   <table mat-table [dataSource]="listaObraSociales" class="mat-elevation-z8">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-      <td mat-cell [ngClass]="'custom_id'" fxFlex="5" *matCellDef="let element"> {{element.id}} </td> 
+      <th mat-header-cell fxFlex="20" *matHeaderCellDef mat-sort-header> No. </th>
+      <td mat-cell [ngClass]="'custom_id'" fxFlex="20" *matCellDef="let element"> {{element.id}} </td> 
     </ng-container>
       
     <!-- nota para los atributos de ngClass la propiedad debe ir " " y dentro de estas las '' pq sino no funcionan  -->
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       
-      <th mat-header-cell [ngClass]="'custom_name_th'" *matHeaderCellDef mat-sort-header> Nombre </th>
-       <td mat-cell [ngClass]="'custom_name'" fxFlex *matCellDef="let element"> {{element.title}} </td> 
+      <th mat-header-cell fxFlex="80" [ngClass]="'custom_name_th'" *matHeaderCellDef mat-sort-header> Nombre </th>
+       <td mat-cell [ngClass]="'custom_name'" fxFlex="80" *matCellDef="let element"> {{element.title}} </td> 
     </ng-container>
           
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator [pageSizeOptions]="[ 5, 10]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [ngClass]="'paginacion'" [pageSizeOptions]="[ 5, 10]" showFirstLastButtons></mat-paginator>
   <!-- la siguiente linea es solo para debug  -->
   <!-- {{listaObraSociales|json}} -->
 </div>

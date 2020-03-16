@@ -1,5 +1,5 @@
 table {
-    width: 100%;
+    width: 75%;
   }
 
 .custom_id {
@@ -7,10 +7,19 @@ table {
 }
 
 .custom_name {
-    text-align: center;
+    text-align: left;
     font-style: oblique;
 }
 
 .custom_name_th{
+    text-align: left;
+}
+
+.paginacion{
+    width: 75%;
+}
+
+.centradoDiv {
+    justify-content: center;
     text-align: center;
 }
