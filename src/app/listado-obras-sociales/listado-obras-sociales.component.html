@@ -3,7 +3,7 @@
   <table mat-table [dataSource]="listaObraSociales" class="mat-elevation-z8">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
-      <th mat-header-cell fxFlex="20" *matHeaderCellDef mat-sort-header> No. </th>
+      <th mat-header-cell [ngClass]="'custom_id'" fxFlex="20" *matHeaderCellDef mat-sort-header> No. </th>
       <td mat-cell [ngClass]="'custom_id'" fxFlex="20" *matCellDef="let element"> {{element.id}} </td> 
     </ng-container>
       
