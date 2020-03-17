@@ -4,7 +4,7 @@ import { Routes , RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
-import { LayoutModule } from '@angular/cdk/layout';
+import { LayoutModule, Breakpoints } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
