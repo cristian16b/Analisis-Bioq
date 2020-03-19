@@ -1,5 +1,6 @@
 import { Component, OnInit , ViewChild , Input } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { obraSocialI } from 'src/app/interfaces/obraSocial'
 
 @Component({
   selector: 'app-listado-obras-sociales',
@@ -8,7 +9,7 @@ import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class ListadoObrasSocialesComponent implements OnInit {
 
-  @Input() listadoObrasSociales: any;
+  @Input() listadoObrasSociales: obraSocialI[];
 
   displayedColumns: string[] = ['position', 'name'];
 
@@ -23,9 +24,9 @@ export class ListadoObrasSocialesComponent implements OnInit {
   ngOnInit() {
 
     console.log(this.listadoObrasSociales);
-    // this.listaObraSociales = new MatTableDataSource(listadoObraSociales);
-    // this.listaObraSociales.paginator = this.paginator;
-    // this.listaObraSociales.sort = this.sort;
+    this.listaObraSociales = new MatTableDataSource(this.listadoObrasSociales);
+    this.listaObraSociales.paginator = this.paginator;
+    this.listaObraSociales.sort = this.sort;
     // console.log(this.listaObraSociales);
   }
 }

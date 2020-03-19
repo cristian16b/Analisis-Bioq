@@ -21,7 +21,7 @@ export class ObraSocialComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerObrasSociales();
-    console.log(this.listadoOOSS);
+    // console.log(this.listadoOOSS);
   }
 
   obtenerObrasSociales(){

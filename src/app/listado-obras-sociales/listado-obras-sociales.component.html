@@ -1,16 +1,13 @@
 <div [ngClass]="'centradoDiv'" fxLayout="column" fxLayoutAlign="space-evenly center" >
   <h3>Listado de obras sociales afiliadas</h3>
-  <table mat-table [dataSource]="listaObraSociales" class="mat-elevation-z8">
-    <!-- Position Column -->
+  <table mat-table [dataSource]="listadoObrasSociales" class="mat-elevation-z8">
+
     <ng-container matColumnDef="position">
       <th mat-header-cell [ngClass]="'custom_id'" fxFlex="20" *matHeaderCellDef mat-sort-header> No. </th>
       <td mat-cell [ngClass]="'custom_id'" fxFlex="20" *matCellDef="let element"> {{element.id}} </td> 
     </ng-container>
       
-    <!-- nota para los atributos de ngClass la propiedad debe ir " " y dentro de estas las '' pq sino no funcionan  -->
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      
+    <ng-container matColumnDef="name">   
       <th mat-header-cell fxFlex="80" [ngClass]="'custom_name_th'" *matHeaderCellDef mat-sort-header> Nombre </th>
        <td mat-cell [ngClass]="'custom_name'" fxFlex="80" *matCellDef="let element"> {{element.title}} </td> 
     </ng-container>
@@ -19,6 +16,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   <mat-paginator class="mat-elevation-z8" [ngClass]="'paginacion'" [pageSizeOptions]="[ 5, 10]" showFirstLastButtons></mat-paginator>
-  <!-- la siguiente linea es solo para debug  -->
-  <!-- {{listaObraSociales|json}} -->
 </div>
+  <!-- la siguiente linea es solo para debug  -->
+<!-- <P>EN EL HIJO</P>  
+<p>{{ listadoObrasSociales | async | json }}</p> -->
