@@ -1,5 +1,4 @@
-import { Component, OnInit , ViewChild } from '@angular/core';
-import { ApiRestService } from 'src/app/servicios/api-rest.service';
+import { Component, OnInit , ViewChild , Input } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
@@ -9,6 +8,8 @@ import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class ListadoObrasSocialesComponent implements OnInit {
 
+  @Input() listadoObrasSociales: any;
+
   displayedColumns: string[] = ['position', 'name'];
 
   private listaObraSociales = new MatTableDataSource([]);
@@ -16,32 +17,15 @@ export class ListadoObrasSocialesComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  //mover a un archivo de configuracion
-  private url: string = 'https://my-json-server.typicode.com/cristian16b/Analisis-Bioq/obraSocial';
-
-  constructor(private apiObraSociales:ApiRestService) { 
-    //this.obtenerObrasSociales();
+  constructor() { 
   }
 
   ngOnInit() {
-    this.obtenerObrasSociales();
-    // activo la paginacion
 
-  }
-
-  // para referencia de como cargar una tabla con un servicio y observables
-  // ver el siguiente link:
-  // https://stackoverflow.com/questions/54375073/cannot-use-observable-as-datasource-for-mattable-appears-empty
-  obtenerObrasSociales(){
-    this.apiObraSociales.getObraSocial(this.url)
-      .subscribe(
-        listaObraSociales => {
-          this.listaObraSociales = new MatTableDataSource(listaObraSociales);
-          this.listaObraSociales.paginator = this.paginator;
-          this.listaObraSociales.sort = this.sort;
-          console.log(this.listaObraSociales);
-        }
-      )
-    ;
+    console.log(this.listadoObrasSociales);
+    // this.listaObraSociales = new MatTableDataSource(listadoObraSociales);
+    // this.listaObraSociales.paginator = this.paginator;
+    // this.listaObraSociales.sort = this.sort;
+    // console.log(this.listaObraSociales);
   }
 }
