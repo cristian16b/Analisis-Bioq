@@ -15,8 +15,10 @@ export class ObraSocialComponent implements OnInit {
 
   private listadoOOSS:Observable<obraSocialI[]>;
 
+  private cantidad:number;
+
   constructor(private apiObraSociales:ApiRestService) { 
-      
+      this.cantidad = 0;
   }
 
   ngOnInit() {
@@ -26,5 +28,9 @@ export class ObraSocialComponent implements OnInit {
 
   obtenerObrasSociales(){
     this.listadoOOSS = this.apiObraSociales.getObraSocial(this.url);
+  }
+
+  getCantidad($evento){
+    this.cantidad = $evento;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewChild , Input } from '@angular/core';
+import { Component, OnInit , ViewChild , Input , Output, EventEmitter } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { obraSocialI } from 'src/app/interfaces/obraSocial'
 
@@ -10,6 +10,7 @@ import { obraSocialI } from 'src/app/interfaces/obraSocial'
 export class ListadoObrasSocialesComponent implements OnInit {
 
   @Input() listadoObrasSociales: obraSocialI[];
+  @Output() cantidadObrasSociales = new EventEmitter<number>();
 
   displayedColumns: string[] = ['position', 'name'];
 
@@ -28,5 +29,11 @@ export class ListadoObrasSocialesComponent implements OnInit {
     this.listaObraSociales.paginator = this.paginator;
     this.listaObraSociales.sort = this.sort;
     // console.log(this.listaObraSociales);
+  }
+
+  // metodo para pasar al componente padre (obra-social) la cantidad de filas de la tabla
+  // puede hacerse con las directivas ng pero aca,se hace para mostrar comunicacion hijo->padre
+  getCatidad(){
+    this.cantidadObrasSociales.emit(this.listadoObrasSociales.length);
   }
 }

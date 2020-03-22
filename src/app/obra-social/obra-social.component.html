@@ -1,3 +1,11 @@
-<app-listado-obras-sociales [listadoObrasSociales]="listadoOOSS"></app-listado-obras-sociales>
+<app-listado-obras-sociales 
+    [listadoObrasSociales]="listadoOOSS"
+    (getCantidad)="getCantidad($event)"
+>
+</app-listado-obras-sociales>
+<div fxLayout="column" fxLayoutAlign="center center">
+    <p>Total de Obras Sociales(en el componente hijo): {{cantidad}}</p>
+</div> 
 <app-crear-obra-social></app-crear-obra-social>
+<!-- solo para debugear que se recibieron los datos desde el servicio -->
 <!-- <p>{{ listadoOOSS | async | json }}</p> -->
