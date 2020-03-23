@@ -22,6 +22,7 @@ import { ApiRestService } from './servicios/api-rest.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -63,7 +64,8 @@ const routes: Routes = [
     HttpClientModule,
     MatPaginatorModule,
     RouterModule.forRoot(routes),
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [ApiRestService],
   bootstrap: [AppComponent]

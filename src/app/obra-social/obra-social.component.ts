@@ -35,9 +35,7 @@ export class ObraSocialComponent implements OnInit {
   }
 
   // recibo la cantidad de filas desde el componente hijo
-  getCantidad($evento){
-    console.log('en el padre');
-    console.log($evento);
-    this.cantidad = $evento.cantidad;
+  getCantidad(evento){
+    this.cantidad = evento.cantidad;
   }
 }

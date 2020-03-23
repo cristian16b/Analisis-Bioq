@@ -33,13 +33,13 @@ export class ListadoObrasSocialesComponent implements OnInit {
 
   // metodo para pasar al componente padre (obra-social) la cantidad de filas de la tabla
   // puede hacerse con las directivas ng pero aca,se hace para mostrar comunicacion hijo->padre
-  getCantidadFilas(){
-    console.log('en el hijo');
-    console.log(this.listadoObrasSociales);
-    console.log(this.listadoObrasSociales.length);
+  getCantidadFilas(evento){
+    // console.log('en el hijo');
+    // console.log(this.listadoObrasSociales);
+    // console.log(this.listadoObrasSociales.length);
     this.cantidadObrasSociales.emit(
       {
-        cantidad: 5
+        cantidad: this.listadoObrasSociales.length
       }
     );
   }
