@@ -10,7 +10,7 @@ import { obraSocialI } from 'src/app/interfaces/obraSocial'
 export class ListadoObrasSocialesComponent implements OnInit {
 
   @Input() listadoObrasSociales: obraSocialI[];
-  @Output() cantidadObrasSociales = new EventEmitter<number>();
+  @Output() cantidadObrasSociales = new EventEmitter();
 
   displayedColumns: string[] = ['position', 'name'];
 
@@ -24,7 +24,7 @@ export class ListadoObrasSocialesComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log(this.listadoObrasSociales);
+    // console.log(this.listadoObrasSociales);
     this.listaObraSociales = new MatTableDataSource(this.listadoObrasSociales);
     this.listaObraSociales.paginator = this.paginator;
     this.listaObraSociales.sort = this.sort;
@@ -33,7 +33,14 @@ export class ListadoObrasSocialesComponent implements OnInit {
 
   // metodo para pasar al componente padre (obra-social) la cantidad de filas de la tabla
   // puede hacerse con las directivas ng pero aca,se hace para mostrar comunicacion hijo->padre
-  getCatidad(){
-    this.cantidadObrasSociales.emit(this.listadoObrasSociales.length);
+  getCantidadFilas(){
+    console.log('en el hijo');
+    console.log(this.listadoObrasSociales);
+    console.log(this.listadoObrasSociales.length);
+    this.cantidadObrasSociales.emit(
+      {
+        cantidad: 5
+      }
+    );
   }
 }

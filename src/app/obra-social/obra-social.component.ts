@@ -13,7 +13,8 @@ export class ObraSocialComponent implements OnInit {
   //mover a un archivo de configuracion
   private url: string = 'https://my-json-server.typicode.com/cristian16b/Analisis-Bioq/obraSocial';
 
-  private listadoOOSS:Observable<obraSocialI[]>;
+  private listadoObservable: Observable<obraSocialI[]>;
+  private listadoOOSS: obraSocialI[];
 
   private cantidad:number;
 
@@ -23,14 +24,20 @@ export class ObraSocialComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerObrasSociales();
-    // console.log(this.listadoOOSS);
   }
 
   obtenerObrasSociales(){
-    this.listadoOOSS = this.apiObraSociales.getObraSocial(this.url);
+    this.listadoObservable = this.apiObraSociales.getObraSocial(this.url);
+    this.listadoObservable.subscribe(data => {
+      //obtengo la info del observable
+        this.listadoOOSS = data;
+    })
   }
 
+  // recibo la cantidad de filas desde el componente hijo
   getCantidad($evento){
-    this.cantidad = $evento;
+    console.log('en el padre');
+    console.log($evento);
+    this.cantidad = $evento.cantidad;
   }
 }
