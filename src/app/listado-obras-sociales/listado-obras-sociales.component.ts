@@ -23,17 +23,21 @@ export class ListadoObrasSocialesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.listadoObrasSociales);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    // repasar el ciclo de vida de los componentes
+    // como los datos vienen de una api-rest al padre, luego son enviados por el pipe de @input
+    // no se si tiene sentido hacerlo aca
+
+    // this.dataSource = new MatTableDataSource(this.listadoObrasSociales);
+    // this.dataSource.paginator = this.paginator;
+    // this.dataSource.sort = this.sort;
     // console.log(this.listadoObrasSociales);
   }
 
   ngOnChanges() {
     if(this.listadoObrasSociales) {
-      console.log('llegan los datos al hijo');
-      console.log(this.listadoObrasSociales);
       this.dataSource = new MatTableDataSource(this.listadoObrasSociales);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     }
   }
 
