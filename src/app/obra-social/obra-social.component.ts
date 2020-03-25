@@ -30,7 +30,9 @@ export class ObraSocialComponent implements OnInit {
     this.listadoObservable = this.apiObraSociales.getObraSocial(this.url);
     this.listadoObservable.subscribe(data => {
       //obtengo la info del observable
+        console.log('llegan los datos al padre');
         this.listadoOOSS = data;
+        console.log(this.listadoOOSS);
     })
   }
 

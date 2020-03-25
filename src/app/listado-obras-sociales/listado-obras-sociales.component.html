@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutAlign="space-evenly center" >
   <h3>Listado de obras sociales afiliadas</h3>
-    <table mat-table [dataSource]="listadoObrasSociales" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <ng-container matColumnDef="position">
         <th mat-header-cell [ngClass]="'custom_id'" fxFlex="20" *matHeaderCellDef mat-sort-header> No. </th>
@@ -15,7 +15,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  <mat-paginator class="mat-elevation-z8" [ngClass]="'paginacion'" [pageSizeOptions]="[ 5, 10]" showFirstLastButtons></mat-paginator>
+  <mat-paginator class="mat-elevation-z8" [ngClass]="'paginacion'" [pageSizeOptions]="[ 2, 3]" showFirstLastButtons></mat-paginator>
   <button mat-raised-button (click)="getCantidadFilas($event)">
     Actualizar
   </button>

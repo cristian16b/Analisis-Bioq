@@ -14,7 +14,7 @@ export class ListadoObrasSocialesComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name'];
 
-  private listaObraSociales = new MatTableDataSource([]);
+  dataSource: MatTableDataSource<obraSocialI>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -23,20 +23,23 @@ export class ListadoObrasSocialesComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.dataSource = new MatTableDataSource(this.listadoObrasSociales);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
     // console.log(this.listadoObrasSociales);
-    this.listaObraSociales = new MatTableDataSource(this.listadoObrasSociales);
-    this.listaObraSociales.paginator = this.paginator;
-    this.listaObraSociales.sort = this.sort;
-    // console.log(this.listaObraSociales);
+  }
+
+  ngOnChanges() {
+    if(this.listadoObrasSociales) {
+      console.log('llegan los datos al hijo');
+      console.log(this.listadoObrasSociales);
+      this.dataSource = new MatTableDataSource(this.listadoObrasSociales);
+    }
   }
 
   // metodo para pasar al componente padre (obra-social) la cantidad de filas de la tabla
   // puede hacerse con las directivas ng pero aca,se hace para mostrar comunicacion hijo->padre
   getCantidadFilas(evento){
-    // console.log('en el hijo');
-    // console.log(this.listadoObrasSociales);
-    // console.log(this.listadoObrasSociales.length);
     this.cantidadObrasSociales.emit(
       {
         cantidad: this.listadoObrasSociales.length
