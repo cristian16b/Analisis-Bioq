@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { MatSortModule } from '@angular/material/sort'; 
 
 const routes: Routes = [
   {
@@ -65,7 +66,10 @@ const routes: Routes = [
     MatPaginatorModule,
     RouterModule.forRoot(routes),
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    // MatSort,
+    // MatSortHeader,
+    MatSortModule
   ],
   providers: [ApiRestService],
   bootstrap: [AppComponent]
