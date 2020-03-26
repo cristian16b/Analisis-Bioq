@@ -24,7 +24,9 @@ export class ListadoObrasSocialesComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() { 
+  // como cambiar el idioma del paginador que viene por defecto
+  // https://es.stackoverflow.com/questions/260851/como-cambio-el-idioma-en-angular-material
+  constructor() {
   }
 
   ngOnInit() {

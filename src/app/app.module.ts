@@ -24,6 +24,8 @@ import { MatPaginatorModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort'; 
+import { getEspPaginatorIntl } from './paginadorEspañol/paginador';
+import {MatPaginatorIntl, PageEvent} from "@angular/material/paginator";
 
 const routes: Routes = [
   {
@@ -67,11 +69,13 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FlexLayoutModule,
     FormsModule,
-    // MatSort,
-    // MatSortHeader,
-    MatSortModule
+    MatSortModule,
+
   ],
-  providers: [ApiRestService],
+  providers: [ApiRestService,
+    // defino un paginador traducido al español
+    { provide: MatPaginatorIntl, useValue: getEspPaginatorIntl() }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

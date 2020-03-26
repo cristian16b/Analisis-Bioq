@@ -15,7 +15,15 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  <mat-paginator class="mat-elevation-z8" [ngClass]="'paginacion'" [pageSizeOptions]="[ 2, 3 , 10]" showFirstLastButtons></mat-paginator>
+    <!-- 
+      para ocultar la opcion de items for, usar la propiedad [hidePageSize]="true"
+    -->
+  <mat-paginator class="mat-elevation-z8" 
+                [ngClass]="'paginacion'" 
+                [pageSizeOptions]="[ 2, 3 , 10]" 
+                [hidePageSize]="true"
+                showFirstLastButtons>
+  </mat-paginator>
   <button mat-raised-button (click)="getCantidadFilas($event)">
     Actualizar
   </button>
