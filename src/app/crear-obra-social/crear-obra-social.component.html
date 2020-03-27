@@ -4,41 +4,32 @@
 <form [formGroup]="formGroup">
   <!-- primer fila -->
   <div fxLayout="row" fxLayoutAlign="none" >
-    <div fxFlex="50">
-      <mat-form-field class="example-full-width">
+      <mat-form-field fxFlex="40" fxFlexOffset="15" class="example-full-width">
         <mat-label>Favorite food</mat-label>
         <input matInput placeholder="Ex. Pizza" value="Sushi">
       </mat-form-field>
-    </div>
-    <div fxFlex="30">
-      <mat-form-field>
+      <mat-form-field fxFlex="30" fxFlexOffset="5">
         <mat-label>Choose a date</mat-label>
         <input matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>      
-    </div>
+      </mat-form-field>
   </div>
   <!-- segunda fila -->
-  <div fxLayout="row" fxLayoutAlign="none" >
-    <div fxFlex="30">
+  <div fxLayout="row" fxLayoutAlign="start start">
+    <div fxFlex="30" fxFlexOffset="15">
       <mat-form-field class="example-full-width">
         <mat-label>Favorite food</mat-label>
         <input matInput placeholder="Ex. Pizza" value="Sushi">
       </mat-form-field>
     </div>
     <div fxFlex="20">
-      <button mat-raised-button>Basic</button>
+      <button mat-raised-button>Agregar</button>
     </div>
   </div>
   <!-- tercer fila -->
-  <div fxLayout="row" fxLayoutAlign="none" >
-    <div fxFlex="30">
-      <button mat-raised-button color="primary">Primary</button>
-    </div>
-    <div fxFlex="20">
-      <button mat-raised-button color="warn">Warn</button>
-    </div>
+  <div fxLayout="row" fxLayoutAlign="center end" >
+    <button fxFlex="30" mat-raised-button color="primary">Aceptar</button>
+    <button fxFlex="30" mat-raised-button color="warn">Cancelar</button>
   </div>
 </form>
-<mat-divider></mat-divider>
