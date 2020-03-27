@@ -22,6 +22,7 @@
                 [ngClass]="'paginacion'" 
                 [pageSizeOptions]="[ 2, 3 , 10]" 
                 [hidePageSize]="true"
+                (page)="paginacionEventos($event)"
                 showFirstLastButtons>
   </mat-paginator>
   <button mat-raised-button (click)="getCantidadFilas($event)">

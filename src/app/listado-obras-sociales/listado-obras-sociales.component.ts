@@ -58,4 +58,20 @@ export class ListadoObrasSocialesComponent implements OnInit {
       }
     );
   }
+
+  // https://stackoverflow.com/questions/59850607/how-to-know-if-the-next-or-previous-button-of-mat-paginator-is-clicked
+  paginacionEventos(event: any) {
+
+    console.log(event);
+
+    if (event.previousPageIndex > event.pageIndex) {
+      // previous button clicked
+      console.log('anterior');
+    } else {
+     // next button clicked
+      console.log('siguiente');
+    }
+    // tener en cuenta para cuando se hagan las peticiones
+    // https://justcodeit.io/paginacion-en-angular-dos-componentes-un-servicio/
+ }
 }
