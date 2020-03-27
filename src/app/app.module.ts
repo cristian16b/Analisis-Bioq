@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort'; 
 import { getEspPaginatorIntl } from './paginadorEspañol/paginador';
 import {MatPaginatorIntl, PageEvent} from "@angular/material/paginator";
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,11 @@ const routes: Routes = [
   {
     path:'laboratorio',
     component:LaboratorioComponent
+  },
+  {
+    // por defecto cuando se inicia el sistema muestra el home
+    path: '',
+    component:HomeComponent
   }  
 ];
 
@@ -51,7 +57,8 @@ const routes: Routes = [
     LaboratorioComponent,
     ListadoObrasSocialesComponent,
     FilaObraSocialComponent,
-    CrearObraSocialComponent
+    CrearObraSocialComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
