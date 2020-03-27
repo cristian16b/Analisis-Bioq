@@ -16,8 +16,8 @@ import { LaboratorioComponent } from './laboratorio/laboratorio.component';
 import { ListadoObrasSocialesComponent } from './listado-obras-sociales/listado-obras-sociales.component';
 import { FilaObraSocialComponent } from './fila-obra-social/fila-obra-social.component';
 import { CrearObraSocialComponent } from './crear-obra-social/crear-obra-social.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatTableModule} from '@angular/material/table';
+import { MatGridListModule} from '@angular/material/grid-list';
+import { MatTableModule} from '@angular/material/table';
 import { ApiRestService } from './servicios/api-rest.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material';
@@ -29,6 +29,9 @@ import { MatPaginatorIntl, PageEvent} from "@angular/material/paginator";
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
+// import { MatMomentDateModule } from "@angular/material-moment-adapter"; 
 
 const routes: Routes = [
   {
@@ -80,7 +83,11 @@ const routes: Routes = [
     FormsModule,
     MatSortModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatNativeDateModule,
   ],
   providers: [ApiRestService,
     // defino un paginador traducido al español
