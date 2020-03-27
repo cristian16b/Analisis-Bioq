@@ -1,9 +1,27 @@
 <div fxLayout="row" fxLayoutAlign="center none" >
   <h3>Formulario de alta de Obra Social</h3>
 </div>
-<div fxLayout="row" fxLayoutAlign="none" >
-    
-    <div fxFlexOffset="15" fxFlex="60">
+<form [formGroup]="formGroup">
+  <div fxLayout="row" fxLayoutAlign="none" >
+    <div fxFlex="50">
+      <mat-form-field class="example-full-width">
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi">
+      </mat-form-field>
+    </div>
+    <div fxFlex="30">
       
     </div>
-</div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="none" >
+    <div fxFlex="30">
+      <mat-form-field class="example-full-width">
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi">
+      </mat-form-field>
+    </div>
+    <div fxFlex="20">
+      
+    </div>
+  </div>
+</form>

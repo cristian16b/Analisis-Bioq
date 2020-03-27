@@ -25,8 +25,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort'; 
 import { getEspPaginatorIntl } from './paginadorEspañol/paginador';
-import {MatPaginatorIntl, PageEvent} from "@angular/material/paginator";
+import { MatPaginatorIntl, PageEvent} from "@angular/material/paginator";
 import { HomeComponent } from './home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 const routes: Routes = [
   {
@@ -77,7 +79,8 @@ const routes: Routes = [
     FlexLayoutModule,
     FormsModule,
     MatSortModule,
-
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [ApiRestService,
     // defino un paginador traducido al español
