@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-obra-social',
@@ -18,9 +18,22 @@ export class CrearObraSocialComponent implements OnInit {
 
   private buildForm(){
     this.formGroup = this.formBuilder.group({
-      razonSocial: '',
-      fechaInicioActividad: '',
-      email: ''
+      razonSocial: 
+          [
+            Validators.required,
+            Validators.minLength(3),
+            Validators.maxLength(100)
+          ],
+      fechaInicioActividad: 
+          [
+            Validators.required,
+          ],
+      email: 
+          [
+            Validators.required,
+            Validators.maxLength(100),
+            Validators.email
+          ]
     });
   }
 

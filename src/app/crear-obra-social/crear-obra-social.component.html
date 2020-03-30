@@ -6,11 +6,11 @@
   <div fxLayout="row" fxLayoutAlign="none" >
       <mat-form-field fxFlex="40" fxFlexOffset="15" class="example-full-width">
         <mat-label>Nombre</mat-label>
-        <input matInput placeholder="Ingrese el nombre" value="">
+        <input name="razonSocial" matInput placeholder="Ingrese el nombre" value="">
       </mat-form-field>
       <mat-form-field fxFlex="15" fxFlexOffset="5">
         <mat-label>Fecha de creación</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input name="fechaInicioActividades" matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
@@ -20,7 +20,7 @@
     <div fxFlex="30" fxFlexOffset="15">
       <mat-form-field class="example-full-width">
         <mat-label>Correo</mat-label>
-        <input matInput placeholder="Ingrese un correo" value="">
+        <input name="correo" matInput placeholder="Ingrese un correo" value="">
       </mat-form-field>
     </div>
     <div fxFlex="20">
