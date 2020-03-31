@@ -44,8 +44,10 @@ export class CrearObraSocialComponent implements OnInit {
   }
 
   public getError(controlName: string): string {
+    console.log(controlName);
     let error = '';
     const control = this.formGroup.get(controlName);
+    console.log(control);
     if (control.touched && control.errors != null) {
       error = JSON.stringify(control.errors);
     }

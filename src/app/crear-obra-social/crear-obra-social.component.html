@@ -11,8 +11,8 @@
       </mat-form-field>
       <mat-form-field fxFlex="15" fxFlexOffset="5">
         <mat-label>Fecha de creación</mat-label>
-        <input name="fechaInicioActividades" matInput [matDatepicker]="picker">
-        <span>{{ getError('fechaInicioActividades')}}</span>
+        <input name="fechaInicioActividad" matInput [matDatepicker]="picker">
+        <span>{{ getError('fechaInicioActividad')}}</span>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
@@ -22,8 +22,8 @@
     <div fxFlex="30" fxFlexOffset="15">
       <mat-form-field class="example-full-width">
         <mat-label>Correo</mat-label>
-        <input name="correo" matInput placeholder="Ingrese un correo" value="">
-        <span>{{ getError('correo')}}</span>
+        <input name="email" matInput placeholder="Ingrese un correo" value="">
+        <span>{{ getError('email')}}</span>
       </mat-form-field>
     </div>
     <div fxFlex="20">
@@ -42,3 +42,6 @@
     <button fxFlex="30" mat-raised-button color="warn">Cancelar</button>
   </div>
 </form>
+<p>
+  Form Status: {{ formGroup.status }}
+</p>
