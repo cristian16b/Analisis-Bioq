@@ -29,7 +29,12 @@
   </div>
   <!-- tercer fila -->
   <div fxLayout="row" fxLayoutAlign="center end" >
-    <button fxFlex="30" mat-raised-button color="primary">Aceptar</button>
+    <button fxFlex="30" 
+      [disabled]="formGroup.invalid" 
+      mat-raised-button 
+      color="primary">
+        Guardar
+    </button>
     <button fxFlex="30" mat-raised-button color="warn">Cancelar</button>
   </div>
 </form>
