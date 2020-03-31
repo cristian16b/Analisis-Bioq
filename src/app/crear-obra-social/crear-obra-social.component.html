@@ -1,17 +1,17 @@
 <div fxLayout="row" fxLayoutAlign="center none" >
-  <h3>Formulario de alta de Obra Social</h3>
+  <h3>formGroup de alta de Obra Social</h3>
 </div>
 <form [formGroup]="formGroup">
   <!-- primer fila -->
   <div fxLayout="row" fxLayoutAlign="none" >
       <mat-form-field fxFlex="40" fxFlexOffset="15" class="example-full-width">
         <mat-label>Nombre</mat-label>
-        <input name="razonSocial" matInput placeholder="Ingrese el nombre" value="">
+        <input matInput placeholder="Ingrese el nombre" value="" formControlName="razonSocial">
         <span>{{ getError('razonSocial')}}</span>
       </mat-form-field>
       <mat-form-field fxFlex="15" fxFlexOffset="5">
         <mat-label>Fecha de creación</mat-label>
-        <input name="fechaInicioActividad" matInput [matDatepicker]="picker">
+        <input matInput [matDatepicker]="picker" formControlName="fechaInicioActividad">
         <span>{{ getError('fechaInicioActividad')}}</span>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -22,7 +22,7 @@
     <div fxFlex="30" fxFlexOffset="15">
       <mat-form-field class="example-full-width">
         <mat-label>Correo</mat-label>
-        <input name="email" matInput placeholder="Ingrese un correo" value="">
+        <input matInput placeholder="Ingrese un correo" value="" formControlName="email">
         <span>{{ getError('email')}}</span>
       </mat-form-field>
     </div>

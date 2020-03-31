@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-obra-social',
@@ -20,11 +20,11 @@ export class CrearObraSocialComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       razonSocial: 
           ['',
-            [
-              Validators.required,
-              Validators.minLength(3),
-              Validators.maxLength(100)
-            ] 
+              [
+                Validators.minLength(3),
+                Validators.maxLength(100),
+                Validators.required
+              ]
           ],
       fechaInicioActividad: 
           ['',
@@ -34,22 +34,26 @@ export class CrearObraSocialComponent implements OnInit {
           ],
       email: 
           ['',
-            [
-              Validators.required,
-              Validators.maxLength(100),
-              Validators.email
-            ]
+              [
+                Validators.required,
+                Validators.maxLength(100),
+                Validators.email
+              ]
           ]
     });
   }
 
+  // to-review https://github.com/mgalante/curso-angular/blob/master/formularios-reactivos.md
   public getError(controlName: string): string {
-    console.log(controlName);
+    // retorna los datos ingresados en el form
+    console.log( this.formGroup.value);
+    // 
     let error = '';
     const control = this.formGroup.get(controlName);
-    console.log(control);
-    if (control.touched && control.errors != null) {
+    // console.log(control);
+    if (control.touched && control.errors) {
       error = JSON.stringify(control.errors);
+      console.log(controlName + '- error: ' + control.errors);
     }
     return error;
   }
