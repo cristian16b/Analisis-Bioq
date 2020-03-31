@@ -19,24 +19,41 @@ export class CrearObraSocialComponent implements OnInit {
   private buildForm(){
     this.formGroup = this.formBuilder.group({
       razonSocial: 
-          [
-            Validators.required,
-            Validators.minLength(3),
-            Validators.maxLength(100)
+          ['',
+            [
+              Validators.required,
+              Validators.minLength(3),
+              Validators.maxLength(100)
+            ] 
           ],
       fechaInicioActividad: 
-          [
-            Validators.required,
+          ['',
+            [
+              Validators.required,
+            ]
           ],
       email: 
-          [
-            Validators.required,
-            Validators.maxLength(100),
-            Validators.email
+          ['',
+            [
+              Validators.required,
+              Validators.maxLength(100),
+              Validators.email
+            ]
           ]
     });
   }
 
+  public getError(controlName: string): string {
+    let error = '';
+    const control = this.formGroup.get(controlName);
+    if (control.touched && control.errors != null) {
+      error = JSON.stringify(control.errors);
+    }
+    return error;
+  }
 
-
+  public register() {
+    const user = this.formGroup.value;
+    console.log(user);
+  }
 }
