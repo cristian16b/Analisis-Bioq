@@ -7,12 +7,16 @@
       <mat-form-field fxFlex="40" fxFlexOffset="15" class="example-full-width">
         <mat-label>Nombre</mat-label>
         <input matInput placeholder="Ingrese el nombre" value="" formControlName="razonSocial">
-        <span>{{ getError('razonSocial')}}</span>
+        <mat-error>
+          {{ getError('razonSocial')}}
+        </mat-error>
       </mat-form-field>
       <mat-form-field fxFlex="15" fxFlexOffset="5">
         <mat-label>Fecha de creación</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="fechaInicioActividad">
-        <span>{{ getError('fechaInicioActividad')}}</span>
+        <mat-error>
+          {{ getError('fechaInicioActividad')}}
+        </mat-error>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
@@ -23,7 +27,9 @@
       <mat-form-field class="example-full-width">
         <mat-label>Correo</mat-label>
         <input matInput placeholder="Ingrese un correo" value="" formControlName="email">
-        <span>{{ getError('email')}}</span>
+        <mat-error>
+          {{ getError('email')}}
+        </mat-error>
       </mat-form-field>
     </div>
     <div fxFlex="20">
@@ -39,9 +45,10 @@
       color="primary">
         Guardar
     </button>
-    <button fxFlex="30" mat-raised-button color="warn">Cancelar</button>
+    <button fxFlex="30" (click)="resetearFormulario()" mat-raised-button color="warn">Cancelar</button>
   </div>
 </form>
-<p>
+<!-- lo siguiente es solo para debug, para ver el estado del formulario -->
+<!-- <p>
   Form Status: {{ formGroup.status }}
-</p>
+</p> -->
