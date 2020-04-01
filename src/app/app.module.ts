@@ -32,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 // import { MatMomentDateModule } from "@angular/material-moment-adapter"; 
+import {MatExpansionModule} from '@angular/material/expansion'; 
 
 const routes: Routes = [
   {
@@ -88,6 +89,7 @@ const routes: Routes = [
     MatDatepickerModule,
     MatButtonModule,
     MatNativeDateModule,
+    MatExpansionModule
   ],
   providers: [ApiRestService,
     // defino un paginador traducido al español
