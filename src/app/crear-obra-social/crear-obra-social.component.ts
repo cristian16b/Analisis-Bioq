@@ -12,8 +12,8 @@ export class CrearObraSocialComponent implements OnInit {
 
   private mensajesErrores: any = {
     'razonSocial' : {
-      'minLength' : 'El nombre no debe tener menos de 3 caracteres',
-      'maxLength' : 'El nombre no debe tener mas de 10 caracteres',
+      'minlength' : 'El nombre no debe tener menos de 3 caracteres',
+      'maxlength' : 'El nombre no debe tener mas de 10 caracteres',
       'required'  : 'Campo obligatorio'
     },
     'fechaInicioActividad' : {
@@ -21,7 +21,7 @@ export class CrearObraSocialComponent implements OnInit {
     },
     'email' : {
       'required'  : 'Campo obligatorio',
-      'maxLength' : 'El correo no debe tener mas de 10 caracteres',
+      'maxlength' : 'El correo no debe tener mas de 10 caracteres',
       'email'     : 'El formato del correo no es correcto',
     }
   };
@@ -71,6 +71,7 @@ export class CrearObraSocialComponent implements OnInit {
       // la variable 'control.errors' nos devuelve un par del tipo '{"required":true}' 
       let key = Object.keys(control.errors)[0];
       let value = Object.values(control.errors)[0];
+      console.log(key);
       // console.log(this.mensajesErrores[controlName][key]);
       error = this.mensajesErrores[controlName][key];
     }
