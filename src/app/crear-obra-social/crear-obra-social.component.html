@@ -34,7 +34,7 @@
               </mat-error>
             </mat-form-field>
           </div>  
-          <div fxFlex="30">
+          <div fxFlex="30" *ngIf="i>0">
             <button (click)="borrarEmail(i)" mat-raised-button>Borrar</button> 
           </div>
           <!-- fin ngfor -->
