@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-obra-social',
@@ -48,7 +48,27 @@ export class CrearObraSocialComponent implements OnInit {
               Validators.required,
             ]
           ],
-      email: 
+          // el siguiete es el listado de correos (1-N)
+      listadoEmail: this.formBuilder.array
+          ([])
+      // email: 
+      //     ['',
+      //         [
+      //           Validators.required,
+      //           Validators.maxLength(100),
+      //           Validators.email
+      //         ]
+      //     ]
+    });
+  }
+
+  get listadoEmail(): FormArray {
+    return this.formGroup.get('listadoEmail') as FormArray;
+  }
+
+  public anadirEmail() {
+    const nuevo = this.formBuilder.group({
+     email: 
           ['',
               [
                 Validators.required,
@@ -57,6 +77,12 @@ export class CrearObraSocialComponent implements OnInit {
               ]
           ]
     });
+    
+    this.listadoEmail.push(nuevo);
+  }  
+
+  public borrarTrabajo(indice: number) {
+    this.listadoEmail.removeAt(indice);
   }
 
   // to-review https://github.com/mgalante/curso-angular/blob/master/formularios-reactivos.md

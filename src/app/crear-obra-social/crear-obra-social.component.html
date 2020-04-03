@@ -22,17 +22,22 @@
   </div>
   <!-- segunda fila -->
   <div fxLayout="row" fxLayoutAlign="start start">
-    <div fxFlex="30" fxFlexOffset="15">
-      <mat-form-field class="example-full-width">
-        <mat-label>Correo</mat-label>
-        <input matInput placeholder="Ingrese un correo" value="" formControlName="email">
-        <mat-error>
-          {{ getError('email')}}
-        </mat-error>
-      </mat-form-field>
+    <div fxFlex="50" fxFlexOffset="15">
+      <div formArrayName="listadoEmail">
+        <div *ngFor="let email of listadoEmail.controls; let i = index;">
+            <mat-form-field class="example-full-width">
+              <mat-label>Correo</mat-label>
+              <input matInput placeholder="Ingrese un correo" value="" formControlName="email">
+              <mat-error>
+                <!-- {{ getError('email')}} -->
+              </mat-error>
+            </mat-form-field>
+            <button (click)="borrarEmail(i)" mat-raised-button>Borrar</button> 
+        </div>
+      </div>
     </div>
     <div fxFlex="20">
-      <button mat-raised-button>Agregar correo de contacto</button>
+      <button (click)="anadirEmail()" mat-raised-button>Agregar correo de contacto</button>
     </div>
   </div>
   <!-- tercer fila -->
