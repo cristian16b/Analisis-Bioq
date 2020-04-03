@@ -4,7 +4,7 @@
 
       <ng-container matColumnDef="id">
         <th mat-header-cell [ngClass]="'custom_id'" fxFlex="20" *matHeaderCellDef mat-sort-header> Nro. </th>
-        <td mat-cell [ngClass]="'custom_id'" fxFlex="20" *matCellDef="let element"> {{element.id}} </td> 
+        <td mat-cell [ngClass]="'custom_id'" fxFlex="20" *matCellDef="let element"> {{element.id | strpad }} </td> 
       </ng-container>
         
       <ng-container matColumnDef="title">   

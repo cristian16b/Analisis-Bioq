@@ -35,14 +35,14 @@ for (let date = 1; date <= 31; date++) {
 }
 
 export class MomentDateAdapter extends DateAdapter<Moment> {
-  
-    toIso8601(date: Moment): string {
-      throw new Error("Method not implemented.");
+  toIso8601(date: Moment): string {
+    //   throw new Error("Method not implemented.");
+        return null;
   }
   invalid(): Moment {
-      throw new Error("Method not implemented.");
+      return null;
   }
-
+  
       /**
    * Gets the year component of the given date.
    * @param date The date to extract the year from.

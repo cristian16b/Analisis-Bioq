@@ -34,6 +34,7 @@ import { MatNativeDateModule } from '@angular/material';
 // import { MatMomentDateModule } from "@angular/material-moment-adapter"; 
 import {MatExpansionModule} from '@angular/material/expansion'; 
 import { MOMENT_DATE_FORMATS, MomentDateAdapter } from './calendarioEspañol/calendario';
+import { StrpadPipe } from './pipes/strpad.pipe';
 
 const routes: Routes = [
   {
@@ -65,7 +66,8 @@ const routes: Routes = [
     ListadoObrasSocialesComponent,
     FilaObraSocialComponent,
     CrearObraSocialComponent,
-    HomeComponent
+    HomeComponent,
+    StrpadPipe
   ],
   imports: [
     BrowserModule,
