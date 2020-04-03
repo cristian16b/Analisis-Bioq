@@ -20,7 +20,7 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import { MatTableModule} from '@angular/material/table';
 import { ApiRestService } from './servicios/api-rest.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MatPaginatorModule } from '@angular/material';
+import { MatPaginatorModule, MAT_DATE_FORMATS, DateAdapter } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort'; 
@@ -33,6 +33,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 // import { MatMomentDateModule } from "@angular/material-moment-adapter"; 
 import {MatExpansionModule} from '@angular/material/expansion'; 
+import { MOMENT_DATE_FORMATS, MomentDateAdapter } from './calendarioEspañol/calendario';
 
 const routes: Routes = [
   {
@@ -93,7 +94,9 @@ const routes: Routes = [
   ],
   providers: [ApiRestService,
     // defino un paginador traducido al español
-    { provide: MatPaginatorIntl, useValue: getEspPaginatorIntl() }
+    { provide: MatPaginatorIntl, useValue: getEspPaginatorIntl() },
+    {provide: MAT_DATE_FORMATS, useValue: MOMENT_DATE_FORMATS},
+    {provide: DateAdapter, useClass: MomentDateAdapter}
   ],
   bootstrap: [AppComponent]
 })
