@@ -2,6 +2,20 @@ import { DateAdapter, MatDateFormats } from '@angular/material';
 import { isMoment, Moment } from 'moment';
 import * as moment from 'moment';
 
+const MONTHS = {
+    'long': [
+      'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
+      'Octubre', 'Noviembre', 'Diciembre'
+    ],
+    'short': ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    'narrow': ['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D']
+  };
+  const DAYS = {
+    'long': ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    'short': ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+    'narrow': ['D', 'L', 'M', 'X', 'J', 'V', 'S']
+  }
+
 export const MOMENT_DATE_FORMATS: MatDateFormats = {
   parse: {
     dateInput: 'D/MM/YYYY'
@@ -20,7 +34,7 @@ for (let date = 1; date <= 31; date++) {
 }
 
 export class MomentDateAdapter extends DateAdapter<Moment> {
-    
+
   invalid(): Moment {
       throw new Error("Method not implemented.");
   }
@@ -44,14 +58,7 @@ export class MomentDateAdapter extends DateAdapter<Moment> {
   }
 
   getMonthNames(style: 'long' | 'short' | 'narrow'): string[] {
-    switch (style) {
-      case 'long':
-        return this.localeData.months();
-      case 'short':
-        return this.localeData.monthsShort();
-      case 'narrow':
-        return this.localeData.monthsShort().map(month => month[0]);
-    }
+    return MONTHS[style];
   }
 
   getDateNames(): string[] {
