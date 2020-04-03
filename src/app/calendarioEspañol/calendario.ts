@@ -62,18 +62,16 @@ export class MomentDateAdapter extends DateAdapter<Moment> {
   }
 
   getDateNames(): string[] {
+    const dateNames = [];
+    for (let i = 1; i <= 31; i++) {
+      dateNames.push(i.toString());
+    }
+
     return dateNames;
   }
 
   getDayOfWeekNames(style: 'long' | 'short' | 'narrow'): string[] {
-    switch (style) {
-      case 'long':
-        return this.localeData.weekdays();
-      case 'short':
-        return this.localeData.weekdaysShort();
-      case 'narrow':
-        return this.localeData.weekdaysShort();
-    }
+    return DAYS[style];
   }
 
   getYearName(date: Moment): string {
@@ -81,7 +79,7 @@ export class MomentDateAdapter extends DateAdapter<Moment> {
   }
 
   getFirstDayOfWeek(): number {
-    return this.localeData.firstDayOfWeek();
+    return 1; // Monday
   }
 
   getNumDaysInMonth(date: Moment): number {
