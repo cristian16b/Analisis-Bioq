@@ -1,5 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="center none" >
 </div>
+<!-- <div *ngIf="isValidFormSubmitted" class="submitted"> Form submitted successfully. </div> -->
 <form [formGroup]="formGroup">
   <!-- primer fila -->
   <div fxLayout="row" fxLayoutAlign="none" >
@@ -30,8 +31,9 @@
                 <mat-form-field class="example-full-width">
                   <mat-label>Correo</mat-label>
                   <input formControlName="email" matInput placeholder="Ingrese un correo" value="" >
-                  <mat-error>
-                    <!-- {{ getError('email')}} -->
+                  <mat-error *ngIf="e.get('email').errors?.required">
+                    campo requerido
+                    <!-- {{ getError('listadoEmail.controls[i]')}} -->
                   </mat-error>
                 </mat-form-field>
               </div>  

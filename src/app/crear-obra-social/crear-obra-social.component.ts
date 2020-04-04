@@ -86,7 +86,7 @@ export class CrearObraSocialComponent implements OnInit {
     let error = '';
     const control = this.formGroup.get(controlName);
 
-    // console.log(controlName);
+    console.log(controlName);
     // console.log('cambio el valor el usuario ' + control.pristine);
     // console.log('input sucio ' + control.dirty);
     // console.log('input tocado ' + control.touched);
