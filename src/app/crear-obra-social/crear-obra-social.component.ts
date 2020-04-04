@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-obra-social',
@@ -61,15 +61,15 @@ export class CrearObraSocialComponent implements OnInit {
 
   public anadirEmail() {
     const nuevo = this.formBuilder.group({
-     email: 
-          ['',
-              [
-                Validators.required,
-                Validators.maxLength(100),
-                Validators.email
+      email: ['',
+                [
+                  Validators.required,
+                  Validators.maxLength(100),
+                  Validators.email
+                ]
               ]
-          ]
-    });
+            }
+    );
 
     this.listadoEmail.push(nuevo);
   }  
@@ -85,7 +85,14 @@ export class CrearObraSocialComponent implements OnInit {
     // 
     let error = '';
     const control = this.formGroup.get(controlName);
-    if (control.touched && control.errors) {
+
+    // console.log(controlName);
+    // console.log('cambio el valor el usuario ' + control.pristine);
+    // console.log('input sucio ' + control.dirty);
+    // console.log('input tocado ' + control.touched);
+    // console.log(control.touched && control.errors);
+
+    if (control.touched && control.errors != null) {
 
       // la variable 'control.errors' nos devuelve un par del tipo '{"required":true}' 
       let key = Object.keys(control.errors)[0];
