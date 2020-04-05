@@ -30,7 +30,6 @@ export class CrearObraSocialComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
-    this.anadirEmail();
   }
 
   private buildForm(){
@@ -51,7 +50,10 @@ export class CrearObraSocialComponent implements OnInit {
           ],
           // el siguiete es el listado de correos (1-N)
       listadoEmail: this.formBuilder.array
-          ([])
+          (
+            [this.crearPrimerEmailInput()],
+            [Validators.required]
+          )
     });
   }
 
@@ -90,6 +92,18 @@ export class CrearObraSocialComponent implements OnInit {
 
     this.listadoEmail.push(nuevo);
   }  
+
+  public crearPrimerEmailInput(){
+    return this.formBuilder.group({
+      email: ['',
+                [
+                  Validators.required,
+                  Validators.maxLength(100),
+                  Validators.email
+                ]
+              ]
+            });
+  }
 
   public borrarEmail(indice: number) {
     this.listadoEmail.removeAt(indice);
