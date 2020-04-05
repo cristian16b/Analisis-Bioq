@@ -51,12 +51,44 @@ export class CrearObraSocialComponent implements OnInit {
           ],
           // el siguiete es el listado de correos (1-N)
       listadoEmail: this.formBuilder.array
-          ([])
+          ([  
+            this.crearElemento()  
+          ])
     });
   }
 
   get listadoEmail(): FormArray {
     return this.formGroup.get('listadoEmail') as FormArray;
+  }
+
+  private crearElemento(){
+    return this.formBuilder.group({
+      email: ['',
+                [
+                  Validators.required,
+                  Validators.maxLength(100),
+                  Validators.email
+                ]
+              ]
+            }
+    );
+  }
+
+  public getErrorFormArray(control:any,controlName:string)
+  {
+    let error = '';
+    if (control.touched && control.errors != null) {
+
+      console.log('entra');
+      // la variable 'control.errors' nos devuelve un par del tipo '{"required":true}' 
+      let key = Object.keys(control.errors)[0];
+      let value = Object.values(control.errors)[0];
+      // console.log(key);
+      // console.log(this.mensajesErrores[controlName][key]);
+      error = this.mensajesErrores[controlName][key];
+    }
+
+    return error;
   }
 
   public anadirEmail() {
@@ -86,14 +118,8 @@ export class CrearObraSocialComponent implements OnInit {
     let error = '';
     const control = this.formGroup.get(controlName);
 
-    console.log(controlName);
-    // console.log('cambio el valor el usuario ' + control.pristine);
-    // console.log('input sucio ' + control.dirty);
-    // console.log('input tocado ' + control.touched);
-    // console.log(control.touched && control.errors);
-
     if (control.touched && control.errors != null) {
-
+      // console.log('entra');
       // la variable 'control.errors' nos devuelve un par del tipo '{"required":true}' 
       let key = Object.keys(control.errors)[0];
       let value = Object.values(control.errors)[0];
@@ -101,6 +127,7 @@ export class CrearObraSocialComponent implements OnInit {
       // console.log(this.mensajesErrores[controlName][key]);
       error = this.mensajesErrores[controlName][key];
     }
+    
     return error;
   }
 
