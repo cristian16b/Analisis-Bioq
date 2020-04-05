@@ -51,27 +51,12 @@ export class CrearObraSocialComponent implements OnInit {
           ],
           // el siguiete es el listado de correos (1-N)
       listadoEmail: this.formBuilder.array
-          ([  
-            this.crearElemento()  
-          ])
+          ([])
     });
   }
 
   get listadoEmail(): FormArray {
     return this.formGroup.get('listadoEmail') as FormArray;
-  }
-
-  private crearElemento(){
-    return this.formBuilder.group({
-      email: ['',
-                [
-                  Validators.required,
-                  Validators.maxLength(100),
-                  Validators.email
-                ]
-              ]
-            }
-    );
   }
 
   public getErrorFormArray(control:any,controlName:string)

@@ -25,6 +25,13 @@
   <div fxLayout="row" fxLayoutAlign="start start">
     <div fxFlex="50" fxFlexOffset="15">
       <div formArrayName="listadoEmail">
+
+        <div *ngFor="let field of guidelines.fields; let i=index">
+          <mat-form-field>
+            <input [formControlName]="field.field_name" ngDefaultControl matInput placeholder={{field.field_name}} value={{field.notes}}>
+          </mat-form-field>
+        </div>
+
         <div *ngFor="let e of listadoEmail.controls; let i = index;">
             <ng-container [formGroupName]="i">
               <div fxFlex="70">
