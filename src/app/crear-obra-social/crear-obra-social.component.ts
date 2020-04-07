@@ -66,7 +66,6 @@ export class CrearObraSocialComponent implements OnInit {
     let error = '';
     if (control.touched && control.errors != null) {
 
-      console.log('entra');
       // la variable 'control.errors' nos devuelve un par del tipo '{"required":true}' 
       let key = Object.keys(control.errors)[0];
       let value = Object.values(control.errors)[0];
@@ -122,7 +121,7 @@ export class CrearObraSocialComponent implements OnInit {
       // la variable 'control.errors' nos devuelve un par del tipo '{"required":true}' 
       let key = Object.keys(control.errors)[0];
       let value = Object.values(control.errors)[0];
-      console.log(key);
+      // console.log(key);
       // console.log(this.mensajesErrores[controlName][key]);
       error = this.mensajesErrores[controlName][key];
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit , ViewChild , Input , Output, EventEmitter } from '@angular/core';
 import { MatPaginator, MatTableDataSource} from '@angular/material';
 import { obraSocialI } from 'src/app/interfaces/obraSocial';
-import {MatSort} from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-listado-obras-sociales',
@@ -45,7 +45,7 @@ export class ListadoObrasSocialesComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.listadoObrasSociales);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(this.listadoObrasSociales);
+      // console.log(this.listadoObrasSociales);
     }
   }
 
