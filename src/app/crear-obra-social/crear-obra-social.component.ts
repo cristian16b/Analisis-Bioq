@@ -130,8 +130,14 @@ export class CrearObraSocialComponent implements OnInit {
   }
 
   public register() {
-    const user = this.formGroup.value;
-    console.log(user);
+    if (this.formGroup.valid) {
+      this.formGroup.reset();
+      const user = this.formGroup.value;
+      console.log(user);
+    }
+    else {
+      console.log('formulario invalido');
+    }
   }
 
   public resetearFormulario(){
