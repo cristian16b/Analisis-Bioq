@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Pipe({
   name: 'strpad'
@@ -11,7 +12,7 @@ export class StrpadPipe implements PipeTransform {
     if(value !== null){
       let numero = value;
       let numeroString = '' + numero;
-      salida = numeroString.padStart(3,'0');
+      salida = numeroString.padStart(environment.strPadCantidadCeros,'0');
     }
     return salida;
   }

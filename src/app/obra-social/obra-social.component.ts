@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiRestService } from 'src/app/servicios/api-rest.service';
 import { Observable } from 'rxjs';
 import { obraSocialI } from '../interfaces/obraSocial';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-obra-social',
@@ -9,9 +10,6 @@ import { obraSocialI } from '../interfaces/obraSocial';
   styleUrls: ['./obra-social.component.css']
 })
 export class ObraSocialComponent implements OnInit {
-
-  //mover a un archivo de configuracion
-  private url: string = 'https://my-json-server.typicode.com/cristian16b/Analisis-Bioq/obraSocial';
 
   private listadoObservable: Observable<obraSocialI[]>;
   private listadoOOSS: obraSocialI[];
@@ -27,7 +25,7 @@ export class ObraSocialComponent implements OnInit {
   }
 
   obtenerObrasSociales(){
-    this.listadoObservable = this.apiObraSociales.getObraSocial(this.url);
+    this.listadoObservable = this.apiObraSociales.getObraSocial(environment.apiUrlObrasSocialesBase);
     this.listadoObservable.subscribe(data => {
       //obtengo la info del observable
       this.listadoOOSS = data;

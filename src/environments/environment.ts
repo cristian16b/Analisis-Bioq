@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrlObrasSocialesBase: 'https://my-json-server.typicode.com/cristian16b/Analisis-Bioq/obraSocial',
+  strPadCantidadCeros: 3
 };
 
 /*
