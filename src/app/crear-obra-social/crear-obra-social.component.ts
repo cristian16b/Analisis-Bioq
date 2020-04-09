@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl, NgForm } from '@angular/forms';
 import { obraSocial } from '../interfaces/obraSocial';
 
 @Component({
@@ -135,12 +135,14 @@ export class CrearObraSocialComponent implements OnInit {
   }
 
   // evento submit del formulario
-  public register() {
+  public register(f:NgForm) {
     if (this.formGroup.valid) {
       // convierto el formgroup to model object
       this.obraSocialNueva = new obraSocial(this.formGroup.value);
       // muestro un pequeño tostring
       console.log(this.obraSocialNueva.toStringCreada());
+
+      f.resetForm();
     }
     else {
       console.log('formulario invalido');

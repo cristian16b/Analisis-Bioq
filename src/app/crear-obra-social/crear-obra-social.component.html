@@ -1,7 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="center none" >
 </div>
 <!-- <div *ngIf="isValidFormSubmitted" class="submitted"> Form submitted successfully. </div> -->
-<form [formGroup]="formGroup">
+<form #f="ngForm" (ngSubmit)="register(f)" [formGroup]="formGroup">
   <!-- primer fila -->
   <div fxLayout="row" fxLayoutAlign="none" >
       <mat-form-field fxFlex="40" fxFlexOffset="15" class="example-full-width">
@@ -55,7 +55,6 @@
   <div fxLayout="row" fxLayoutAlign="center end" >
     <button fxFlex="30"  
       mat-raised-button
-      (click)="register()"
       [disabled]="formGroup.invalid" 
       color="primary">
         Guardar
