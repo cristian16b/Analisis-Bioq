@@ -6,14 +6,14 @@
   <div fxLayout="row" fxLayoutAlign="none" >
       <mat-form-field fxFlex="40" fxFlexOffset="15" class="example-full-width">
         <mat-label>Nombre</mat-label>
-        <input matInput placeholder="Ingrese el nombre" value="" formControlName="razonSocial">
+        <input matInput placeholder="Ingrese el nombre" autocomplete="off" value="" formControlName="razonSocial">
         <mat-error>
           {{ getError('razonSocial')}}
         </mat-error>
       </mat-form-field>
       <mat-form-field fxFlex="15" fxFlexOffset="5">
         <mat-label>Fecha de creación</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fechaInicioActividad">
+        <input matInput [matDatepicker]="picker" autocomplete="off" formControlName="fechaInicioActividad">
         <mat-error>
           {{ getError('fechaInicioActividad')}}
         </mat-error>
@@ -30,7 +30,7 @@
               <div fxFlex="70">
                 <mat-form-field class="example-full-width">
                   <mat-label>Correo</mat-label>
-                  <input formControlName="email" matInput placeholder="Ingrese un correo" value="" >
+                  <input formControlName="email" autocomplete="off" matInput placeholder="Ingrese un correo" value="" >
                   <mat-error>
                     {{ getErrorFormArray(e.get('email'),'email') }}
                   </mat-error>
