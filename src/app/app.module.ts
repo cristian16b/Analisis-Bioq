@@ -48,7 +48,13 @@ const routes: Routes = [
   },
   {
     path:'laboratorio',
-    component:LaboratorioComponent
+    children: [
+      { path: '', component:LaboratorioComponent },
+      { path: ':tipo' , component:LaboratorioComponent },
+      // redirecciona todas las rutas del tipo /laboratorio/ cualquiera a
+      // /laboratorio
+      { path: '**', redirectTo: '/laboratorio' },
+    ]
   },
   {
     // por defecto cuando se inicia el sistema muestra el home
@@ -56,9 +62,9 @@ const routes: Routes = [
     component:HomeComponent
   },
   {
-    path: "laboratorio/:tipo",
-    component: LaboratorioComponent
-  }  
+    path: '**',
+    redirectTo: 'not-found'
+  }
 ];
 
 @NgModule({
