@@ -31,10 +31,11 @@ export class LaboratorioComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((parametros: ParamMap) => {
       let parametro = parametros.get('tipo');
-      console.log(parametro);
       if(parametro !== '')
+      {
         this.listadoVisualizar = this.listado[parametro];
-      console.log(this.listadoVisualizar);
+        console.log(this.listadoVisualizar);
+      }
     })
   }
 }

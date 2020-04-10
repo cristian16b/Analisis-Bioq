@@ -5,6 +5,7 @@
     <h4 fxFlexOffset="5">Haga click sobre un grupo para poder ver las variables registradas</h4>
 </div>
 <div fxLayout="row" fxLayoutAlign="space-around stretch" >
+    <h5>Las rutas son definidas como parametros, es solo didactico, deberian ser definidas fijas</h5>
     <div fxLayout="column" fxFlex="50" fxFlexOffset="10">
         <a mat-button routerLink="hemograma">Hemograma</a>
     </div>
@@ -13,5 +14,7 @@
     </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="start start">
-    <router-outlet></router-outlet>
+    <router-outlet>
+        {{listadoVisualizar}}
+    </router-outlet>
 </div>
