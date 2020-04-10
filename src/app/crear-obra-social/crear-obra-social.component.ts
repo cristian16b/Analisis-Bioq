@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl, NgForm } from '@angular/forms';
 import { obraSocial } from '../interfaces/obraSocial';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-crear-obra-social',
@@ -31,7 +32,7 @@ export class CrearObraSocialComponent implements OnInit {
     }
   };
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.buildForm();
@@ -141,15 +142,24 @@ export class CrearObraSocialComponent implements OnInit {
       this.obraSocialNueva = new obraSocial(this.formGroup.value);
       // muestro un pequeño tostring
       console.log(this.obraSocialNueva.toStringCreada());
-
+      // reseteo el formulario(con la variable que se define en el form en .html) 
       f.resetForm();
+      // abro la ventana de confirmación
+      this.abrirSnackBar('Fue creada correctamente la obra social!');
     }
     else {
-      console.log('formulario invalido');
+      // console.log('formulario invalido');
+      this.abrirSnackBar('Formulario no es valido!');
     }
   }
 
   public resetearFormulario(){
     this.formGroup.reset();
+  }
+
+  private abrirSnackBar(mensaje:string){
+    this._snackBar.open(mensaje, null, {
+      duration: 2000,
+    });
   }
 }

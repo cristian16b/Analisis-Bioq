@@ -35,6 +35,7 @@ import { MatNativeDateModule } from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion'; 
 import { MOMENT_DATE_FORMATS, MomentDateAdapter } from './calendarioEspañol/calendario';
 import { StrpadPipe } from './pipes/strpad.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 const routes: Routes = [
   {
@@ -92,7 +93,8 @@ const routes: Routes = [
     MatDatepickerModule,
     MatButtonModule,
     MatNativeDateModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule
   ],
   providers: [ApiRestService,
     // defino un paginador traducido al español
