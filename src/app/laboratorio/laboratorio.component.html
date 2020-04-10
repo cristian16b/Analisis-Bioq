@@ -6,9 +6,12 @@
 </div>
 <div fxLayout="row" fxLayoutAlign="space-around stretch" >
     <div fxLayout="column" fxFlex="50" fxFlexOffset="10">
-        columna 1
+        <a routerLink="laboratorio/hemograma">Hemograma</a>
     </div>
     <div fxLayout="column" fxFlex="50" fxFlexOffset="10">
-        columna 2
+        <a routerLink="laboratorio/colesterol">Colesterol</a>
     </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="start start">
+    <router-outlet></router-outlet>
 </div>

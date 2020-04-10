@@ -54,6 +54,10 @@ const routes: Routes = [
     // por defecto cuando se inicia el sistema muestra el home
     path: '',
     component:HomeComponent
+  },
+  {
+    path: "laboratorio/:tipo",
+    component: LaboratorioComponent
   }  
 ];
 
